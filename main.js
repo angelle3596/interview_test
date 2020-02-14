@@ -26,7 +26,7 @@ function draw(){
     var canvas = document.getElementById('canvas');
     var circle = canvas.getContext("2d");
     circle.beginPath();
-    circle.arc(x, y, 20, 0, 2 * Math.PI,true);
+    circle.arc(x, y, 10, 0, 2 * Math.PI,true);
     circle.strokeStyle = "red";
     circle.closePath();
     circle.fillStyle = "red";
@@ -44,15 +44,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("keydown",(event)=>{
     console.log(event.keyCode)
-    if (speedy <= 0) {
-        document.getElementById('stop').innerText = 'Increment velocity'
+    if (speedy === 0) {
+        document.getElementById('stop').innerText = 'Too slow, you lose'
+        document.getElementById('velocity').innerText = 'Velocity = 0'
+
+        return
     }
     if (event.keyCode === 38 ){
         (speedx > 0) ? speedx += 1 : speedx -= 1;
         (speedy > 0) ? speedy += 1 : speedy -= 1;
+        document.getElementById('velocity').innerText = Math.abs(speedx)
     }
     if (event.keyCode === 40 ){
         (speedx > 0) ? speedx -= 1 : speedx += 1;
         (speedy > 0) ? speedy -= 1 : speedy += 1;
+        document.getElementById('velocity').innerText = Math.abs(speedx - 1)
     }
 })
