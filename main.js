@@ -66,9 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("keydown",(event)=>{
     console.log(event.keyCode)
     if (speedy === 0) {
-        document.getElementById('stop').innerText = 'Too slow, you lose'
-
-        return
+        // document.getElementById('stop').innerText = 'Too slow, you lose'
+    return
     }
     if (event.keyCode === 38 ){
         (speedx > 0) ? speedx += 1 : speedx -= 1;
@@ -86,16 +85,16 @@ document.addEventListener("keydown",(event)=>{
 //Changes speed based on up arrow
 
 document.getElementById("control-down").addEventListener("click",(event) =>{
+    if (speedy === 0) {
+    return
+    }
     if (speedy > 0 || speedx > 0){
         (speedx > 0) ? speedx -= 1 : speedx += 1;
         (speedy > 0) ? speedy -= 1 : speedy += 1;
         document.getElementById('velocity').innerText = Math.abs(speedx)
     }
-    if (speedy === 0) {
-        document.getElementById('stop').innerText = 'Too slow, you lose'
-    return
-    }
 })
+
 document.getElementById("control-up").addEventListener("click",(event) =>{
     (speedx > 0) ? speedx += 1 : speedx -= 1;
     (speedy > 0) ? speedy += 1 : speedy -= 1;
