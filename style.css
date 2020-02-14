@@ -25,8 +25,8 @@ body {
   }
 
   p{
-      margin: 0px;
-      padding-right: 5px;
+    margin: 0px;
+    padding-right: 5px;
   }
   #control-up {
   bottom: 10%;
@@ -45,5 +45,5 @@ body {
     height:8%;
     padding:0px;
     font-size: 25px;
-  }
+}
  

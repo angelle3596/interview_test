@@ -83,8 +83,10 @@ document.addEventListener("keydown",(event)=>{
 })
 
 
+//Changes speed based on up arrow
+
 document.getElementById("control-down").addEventListener("click",(event) =>{
-    if (speedy > 0 && speedx >0){
+    if (speedy > 0 || speedx > 0){
         (speedx > 0) ? speedx -= 1 : speedx += 1;
         (speedy > 0) ? speedy -= 1 : speedy += 1;
         document.getElementById('velocity').innerText = Math.abs(speedx)
@@ -94,17 +96,11 @@ document.getElementById("control-down").addEventListener("click",(event) =>{
     return
     }
 })
-//Changes speed based on up arrow
 document.getElementById("control-up").addEventListener("click",(event) =>{
     (speedx > 0) ? speedx += 1 : speedx -= 1;
     (speedy > 0) ? speedy += 1 : speedy -= 1;
     document.getElementById('velocity').innerText = Math.abs(speedx)
 })
-//Changes speed based on down arrow
-// document.getElementById("control-down").addEventListener("click",(event) =>{
-//     (speedx > 0) ? speedx -= 1 : speedx += 1;
-//     (speedy > 0) ? speedy -= 1 : speedy += 1;
-//     document.getElementById('velocity').innerText = Math.abs(speedx)
-// })
+
 
 
