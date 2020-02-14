@@ -79,6 +79,6 @@ document.addEventListener("keydown",(event)=>{
     if (event.keyCode === 40 ){
         (speedx > 0) ? speedx -= 1 : speedx += 1;
         (speedy > 0) ? speedy -= 1 : speedy += 1;
-        document.getElementById('velocity').innerText = Math.abs(speedx - 1)
+        document.getElementById('velocity').innerText = Math.abs(speedx )
     }
 })
