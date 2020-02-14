@@ -1,20 +1,31 @@
 body {
     margin: 20px;
+    justify-content: center;
 }
 
 #canvas {
     border: 1px solid black;
-    width: 90%; 
+    width: 100%;
 }
 
 #stop {
     position: absolute;
-    top: 25%;
-    left: 10%
+    top: 15%;
+    left: 10%;
+    font-family: 'Open Sans', sans-serif;
+    color:red;
+
+  }
+  #text{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
   }
 
-  #velocity {
-      position: absolute;
-      top:20%;
-      left:10%;
+  p{
+      margin: 0px;
+      padding-right: 5px;
   }
+ 

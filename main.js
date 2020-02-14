@@ -68,7 +68,6 @@ document.addEventListener("keydown",(event)=>{
     console.log(event.keyCode)
     if (speedy === 0) {
         document.getElementById('stop').innerText = 'Too slow, you lose'
-        document.getElementById('velocity').innerText = 'Velocity = 0'
 
         return
     }
