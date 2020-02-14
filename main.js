@@ -82,3 +82,19 @@ document.addEventListener("keydown",(event)=>{
         document.getElementById('velocity').innerText = Math.abs(speedx )
     }
 })
+document.getElementById("control-up").addEventListener("click",(event) =>{
+    (speedx > 0) ? speedx += 1 : speedx -= 1;
+    (speedy > 0) ? speedy += 1 : speedy -= 1;
+    document.getElementById('velocity').innerText = Math.abs(speedx)
+})
+
+document.getElementById("control-down").addEventListener("click",(event) =>{
+    (speedx > 0) ? speedx -= 1 : speedx += 1;
+    (speedy > 0) ? speedy -= 1 : speedy += 1;
+    document.getElementById('velocity').innerText = Math.abs(speedx)
+    if (speedy === 0) {
+        document.getElementById('stop').innerText = 'Too slow, you lose'
+        
+        return
+    }
+})
