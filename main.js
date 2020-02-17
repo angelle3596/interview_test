@@ -1,10 +1,10 @@
 const ctx = canvas.getContext("2d");
-let x=100;
-let y=200;
+let x=10;
+let y=50;
 var ballRadius = 10;
 
-let speedx=5;
-let speedy=5;
+let speedx=2;
+let speedy=2;
 let color = getRandomColor();
 const paddleHeight = 10;
 const paddleWidth= 75;
@@ -14,6 +14,9 @@ let rightPressed = false;
 let leftPressed = false;
 
 const velocityDisplay = document.getElementById('velocity')
+const gameOverDisplay = document.getElementById('game-over')
+
+velocityDisplay.innerText = Math.abs(speedx)
 
 // Initializes the canvas
 function initCanvas () {
@@ -35,8 +38,6 @@ function init()
     ctx.clearRect(0,0, canvas.width, canvas.height)
     draw()
 },10);
-// const interval = setInterval(draw, 10);
-
 }
 // generates a random color for the ball
 function getRandomColor() {
@@ -80,9 +81,10 @@ function draw(){
             speedy = -speedy;
         }
         else {
-            alert("GAME OVER");
-            document.location.reload();
+            // alert("GAME OVER");
+            // document.location.reload();
             clearInterval(interval);
+            gameOverDisplay.innerHTML = "GAME OVER"
         }
     }
     x+=speedx;
@@ -121,7 +123,7 @@ document.addEventListener("keydown",(event)=>{
     if (event.keyCode === 40 ){
         (speedx > 0) ? speedx -= 1 : speedx += 1;
         (speedy > 0) ? speedy -= 1 : speedy += 1;
-        velocityDisplay.innerText = Math.abs(speedx )
+        velocityDisplay.innerText = Math.abs(speedx)
     }
 })
 
